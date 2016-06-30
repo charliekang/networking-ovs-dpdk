@@ -66,7 +66,7 @@ function ovs_dpdk_create_kvm_wrapper {
     fi
 
     sudo mv $KVM_CMD $KVM_CMD.orig
-    if [ "$os_VENDOR" == "CentOS" ]; then
+    if [ "$os_VENDOR" == "CentOS" ] || [ "$os_VENDOR" == "RedHatEnterpriseServer" ]; then
         if [ ! -e /usr/bin/qemu-system-x86_64.org ]; then
             sudo mv /usr/bin/qemu-system-x86_64 /usr/bin/qemu-system-x86_64.org
         fi
